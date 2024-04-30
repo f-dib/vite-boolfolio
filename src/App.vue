@@ -4,7 +4,7 @@
 import axios from 'axios';
 
 // importiamo components ProjectCard
-// import ProjectCard from './components/ProjectCard.vue'
+import ProjectCard from './components/ProjectCard.vue'
 
 export default {
   data() {
@@ -23,9 +23,9 @@ export default {
     }
   },
 
-  // components: {
-  //   ProjectCard,
-  // },
+  components: {
+    ProjectCard,
+  },
 
 
   mounted() {
@@ -82,13 +82,9 @@ export default {
     <h1>I nostri Progetti</h1>
 
     <div v-if="!isLoading">
-
-      <ul>
-        <li v-for="project in projects">
-          {{ project.name }}
-        </li>
-      </ul>
   
+      <ProjectCard v-for="currentProject in projects" :project="currentProject"></ProjectCard>
+
       <nav >
         <ul class="d-flex gap-2">
   
@@ -106,8 +102,6 @@ export default {
     </div>
 
   </div>
-
-  <!-- <ProjectCard v-for="currentProject in projects" :project="currentProject"></ProjectCard> -->
 
 </template>
 

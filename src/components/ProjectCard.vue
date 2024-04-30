@@ -30,13 +30,7 @@ export default {
 
 </template>
 
-<style lang="scsss">
-
-.card {
-  /* width: 100px;
-  background-color: grey;
-  border: 1px solid red; */
-}
+<style lang="scss">
 
 
 </style>
