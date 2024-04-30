@@ -3,10 +3,6 @@ import axios from 'axios';
 
 export default {
     name: 'ProjectCard',
-    
-    data() {
-      //
-    },
 
     props: {
         project: Object,
@@ -21,7 +17,7 @@ export default {
 
     <div class="card">
       
-      <img src="" alt="{{ project.name }}">
+      <img src="" alt="">
       <h1>
         {{ project.name }}
       </h1>
