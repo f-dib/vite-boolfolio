@@ -4,14 +4,15 @@ export default {
     name: 'SingleProject',
     data() {
         return {
-            post: null,
+            project: null,
+            projectId: null,
             apiBaseUrl: 'http://127.0.0.1:8000/api',
         }
     },
     mounted() {
         // console.log(this.apiBaseUrl + '/posts/2')
         
-        axios.get(this.apiBaseUrl + '/projects/2').then(res => {
+        axios.get(this.apiBaseUrl + '/projects/' + this.projectId).then(res => {
             console.log(res)
             this.project = res.data.project
         })
@@ -23,7 +24,7 @@ export default {
 
     <div v-if="project">
         <h2>
-            {{ project.title }}
+            {{ project.name }}
         </h2>
 
         <p>

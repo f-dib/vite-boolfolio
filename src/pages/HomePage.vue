@@ -1,7 +1,5 @@
 <script>
 
-
-
 // importiamo axios
 
 import axios from 'axios';
