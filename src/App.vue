@@ -1,30 +1,135 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+
+// importiamo axios
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+
+      projects: [],
+
+      // link ai vari endpoint dell'api per vedere le varie pagine dei post
+      apiLinks: [],
+      apiPageNumber: 1,
+
+      isLoading: true,
+
+      baseApiUrl: 'http://127.0.0.1:8000/api',
+
+    }
+  },
+
+  mounted() {
+    
+    this.apiCall();
+
+  },
+
+  methods: {
+
+    apiCall() {
+      // impostiamo la variabile isLoading a true
+      this.isLoading = true
+
+      axios.get(this.baseApiUrl + '/projects', {
+        params: {
+          page: this.apiPageNumber
+        }
+      }).then(res => {
+
+        // solo quando riceviamo una risposta di successo
+        if(res.data.success) {
+          // impostiamo isLoading a false
+          this.isLoading = false
+        }
+
+        console.log(res);
+
+        // salvo i post
+        this.projects = res.data.results.data;
+
+        // salvo i link
+        this.apiLinks = res.data.results.links;
+
+      })
+    },
+
+    changeApiPage(pageNumber) {
+      // console.log(pageNumber)
+      this.apiPageNumber = pageNumber;
+
+      // rifaccio la chiamata api così riottengo i post relativi alla nuova pagina selezionata
+      this.apiCall();
+    },
+
+  },
+}
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container py-5">
+
+    <h1>I nostri Progetti</h1>
+
+    <div v-if="!isLoading">
+
+      <ul>
+        <li v-for="project in projects">
+          {{ project.name }}
+        </li>
+      </ul>
+  
+      <nav >
+        <ul class="d-flex gap-2">
+  
+          <li v-for="link in apiLinks" v-html="link.label" @click="changeApiPage(link.label)" :class="link.label == apiPageNumber ? 'active' : ''">
+            
+          </li>
+  
+        </ul>      
+      </nav>
+    </div>
+    <div v-else>
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style lang="scss" scoped>
+
+nav {
+  margin-top: 100px;
+  padding-top: 20px;
+  border-top: solid 1px gray;
+
+  ul {
+
+    list-style-type: none;
+    
+    li {
+      
+      padding: 8px;
+
+      text-decoration: none;
+      color: white;
+
+      transition: all .3s ease;
+
+      cursor: pointer;
+
+      &:hover, &.active {
+        background-color: rgba(255,255,255,0.4);
+        color: black;
+      }
+
+    }
+  }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+
 </style>
