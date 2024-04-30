@@ -1,9 +1,24 @@
 <script>
 
-// importiamo axios
-import axios from 'axios';
+// // importiamo axios
+// import axios from 'axios';
+import AppHeader from './components/AppHeader.vue'
 
-// importiamo components ProjectCard
+
+export default {
+  data() {
+    return {
+    }
+  },
+  components: {
+    AppHeader
+  },
+};
+
+</script>
+
+
+<!-- // importiamo components ProjectCard
 import ProjectCard from './components/ProjectCard.vue'
 
 export default {
@@ -73,10 +88,27 @@ export default {
 
   },
 }
+ -->
 
-</script>
 
 <template>
+
+  <AppHeader></AppHeader>
+
+  <div class="container py-5">
+
+  <router-view></router-view>
+  
+  </div>
+</template>
+
+<style lang="scss" scoped>
+
+
+</style>
+
+<!-- <router-view></router-view>
+
   <div class="container py-5">
 
     <h1>I nostri Progetti</h1>
@@ -137,4 +169,4 @@ nav {
 }
 
 
-</style>
+</style> -->
