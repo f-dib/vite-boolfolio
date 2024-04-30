@@ -47,10 +47,10 @@ export default {
         console.log(res);
 
         // salvo i post
-        this.projects = res.data.results.data;
+        this.projects = res.data.results;
 
         // salvo i link
-        this.apiLinks = res.data.results.links;
+        this.apiLinks = res.data.results.github_link;
 
       })
     },
