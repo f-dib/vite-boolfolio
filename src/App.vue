@@ -3,6 +3,9 @@
 // importiamo axios
 import axios from 'axios';
 
+// importiamo components ProjectCard
+// import ProjectCard from './components/ProjectCard.vue'
+
 export default {
   data() {
     return {
@@ -19,6 +22,11 @@ export default {
 
     }
   },
+
+  // components: {
+  //   ProjectCard,
+  // },
+
 
   mounted() {
     
@@ -98,6 +106,9 @@ export default {
     </div>
 
   </div>
+
+  <!-- <ProjectCard v-for="currentProject in projects" :project="currentProject"></ProjectCard> -->
+
 </template>
 
 <style lang="scss" scoped>
