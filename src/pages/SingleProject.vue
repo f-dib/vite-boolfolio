@@ -10,11 +10,25 @@ export default {
         }
     },
     mounted() {
-        // console.log(this.apiBaseUrl + '/posts/2')
+        // come recuperiamo il parametro dell'id del project dall'url?
+        // console.log('parametro id della rotta: ', this.$route.params.id);
+        
+        // lo assegnamo alla variabile projectId per comodità
+        this.projectId = this.$route.params.id;
         
         axios.get(this.apiBaseUrl + '/projects/' + this.projectId).then(res => {
-            console.log(res)
-            this.project = res.data.project
+
+            if(res.data.success) {
+                
+                // se troviamo il progetto lo salviamo
+                this.project = res.data.project
+
+            } else {
+                // altrimenti torniamo alla home
+                this.$router.push({name: 'home'})
+            }
+
+
         })
     },
 }
@@ -26,10 +40,6 @@ export default {
         <h2>
             {{ project.name }}
         </h2>
-
-        <p>
-            {{ project.content }}
-        </p>
     </div>
     <div v-else>
         <div class="spinner-border" role="status">
