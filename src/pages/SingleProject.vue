@@ -5,7 +5,7 @@ export default {
     data() {
         return {
             project: null,
-            projectId: null,
+            projectSlug: null,
             apiBaseUrl: 'http://127.0.0.1:8000/api',
         }
     },
@@ -14,14 +14,14 @@ export default {
         // console.log('parametro id della rotta: ', this.$route.params.id);
         
         // lo assegnamo alla variabile projectId per comodità
-        this.projectId = this.$route.params.id;
+        this.projectSlug = this.$route.params.Slug;
         
-        axios.get(this.apiBaseUrl + '/projects/' + this.projectId).then(res => {
+        axios.get(this.apiBaseUrl + '/projects/' + this.projectSlug).then(res => {
 
             if(res.data.success) {
                 
                 // se troviamo il progetto lo salviamo
-                this.project = res.data.project
+                this.projectSlug = res.data.project
 
             } else {
                 // altrimenti torniamo alla home

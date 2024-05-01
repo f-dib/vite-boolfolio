@@ -164,7 +164,7 @@ export default {
 
           {{ project.name }} 
           
-          <router-link :to="{name: 'single-project', params: {id: project.id}}" class="btn btn-outline-info btn-outline">
+          <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="btn btn-outline-info btn-outline">
             Mostra
           </router-link>
 
