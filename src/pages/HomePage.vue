@@ -72,7 +72,7 @@ export default {
 
             params: {
 
-            project: this.apiProjectNumber
+              page: this.apiPageNumber
 
             }
 
@@ -114,11 +114,11 @@ export default {
 
 
 
-        changeApiproject(projectNumber) {
+        changeApiPage(pageNumber) {
 
         // console.log(projectNumber)
 
-        this.apiProjectNumber = projectNumber;
+        this.apiPageNumber = pageNumber;
 
 
 
@@ -162,7 +162,11 @@ export default {
 
         <li v-for="project in projects" class="mb-2">
 
-          {{ project.title }} <router-link :to="{name: 'single-project'}" class="btn btn-outline-info btn-outline">Mostra</router-link>
+          {{ project.name }} 
+          
+          <router-link :to="{name: 'single-project', params: {id: project.id}}" class="btn btn-outline-info btn-outline">
+            Mostra
+          </router-link>
 
         </li>
 
@@ -177,7 +181,7 @@ export default {
 
 
 
-          <li v-for="link in apiLinks" v-html="link.label" @click="changeApiProject(link.label)" :class="link.label == apiProjectNumber ? 'active' : ''">
+          <li v-for="link in apiLinks" v-html="link.label" @click="changeApiPage(link.label)" :class="link.label == apiPageNumber ? 'active' : ''">
 
 
 
