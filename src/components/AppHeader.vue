@@ -32,7 +32,10 @@ export default {
                 <a class="nav-link" href="#">Registration</a>
                 </div>
             </div>
-        </nav>
+
+            
+        </div>
+
     </header>
 
 </template>
@@ -42,5 +45,19 @@ nav {
     .container {
         border-bottom: 1px solid white;
     }
+}
+
+.btn-outline-primary {
+  color: white;
+  border-color: white;
+}
+
+.card{
+
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(238, 236, 236, 0.123);
+    }
+
 }
 </style>
