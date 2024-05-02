@@ -21,6 +21,12 @@ export default {
 
       {{ project.name }}
 
+      {{ project.description }}
+
+      {{ project.github_link }}
+
+      {{ project.date }}
+
     </div>
 
   </div>
