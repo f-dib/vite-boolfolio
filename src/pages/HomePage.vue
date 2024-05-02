@@ -163,8 +163,8 @@ export default {
             <div class="p-2">
                 <div class="card">
                   <!-- controlla immagine -->
-                  <img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid" alt="...">
-                  <div class="card-body">
+                  <div class="p-4 "><img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid rounded-4 " alt="..."></div>
+                  <div class="card-body text-center ">
                       <h5 class="card-title">{{ project.name }}</h5>
                       <p class="card-text">Contenuto della card 1.</p>
                   </div>
@@ -270,6 +270,8 @@ nav {
   
 transition: transform 0.4s ease, box-shadow 0.3s ease;
 cursor: pointer;
+
+
 
 &:hover{
     transform: scale(1.05);
