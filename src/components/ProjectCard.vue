@@ -44,9 +44,4 @@ export default {
 .card-title {
   font-weight: bold;
 }
-
-.btn-outline-primary {
-  color: white;
-  border-color: white;
-}
 </style>
