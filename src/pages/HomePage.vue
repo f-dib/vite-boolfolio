@@ -4,6 +4,8 @@
 
 import axios from 'axios';
 
+import AppJumbo from '../components/AppJumbo.vue';
+
 
 
 export default {
@@ -41,6 +43,10 @@ export default {
         }
 
     },
+
+    components: {
+    AppJumbo,
+  },
 
 
 
@@ -145,18 +151,11 @@ export default {
 
   <div class="">
 
-
-
+    <AppJumbo></AppJumbo>
 
     <h1>I nostri progetti</h1>
 
-
-
-
     <div v-if="!isLoading">
-
-
-
 
       <ul>
 
