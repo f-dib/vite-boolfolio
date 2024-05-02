@@ -8,7 +8,9 @@ export default {
 <template>
 
     <header>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
+            
             <div class="container-fluid">
                 <!-- Logo  -->
                 <a class="navbar-brand m-lg-auto " href="#">
@@ -32,9 +34,8 @@ export default {
                 <a class="nav-link" href="#">Registration</a>
                 </div>
             </div>
-
-            
-        </div>
+       
+        </nav>
 
     </header>
 
