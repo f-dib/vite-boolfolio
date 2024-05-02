@@ -11,27 +11,33 @@ export default {
 
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
             
-            <div class="container-fluid">
-                <!-- Logo  -->
-                <a class="navbar-brand m-lg-auto " href="#">
-                <img src="" alt="Logo" width="80" height="auto">
-                </a>
-                
-                
+            <div class="container d-flex justify-content-between align-items-center py-3">
+
                 <!-- Links sulla sinistra -->
-                <div class="navbar-nav mr-auto">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#">About us</a>
-                <a class="nav-link" href="#">Link3</a>
-                <a class="nav-link" href="#">Link4</a>
-                <a class="nav-link" href="#">Link5</a>
+                <div class="d-flex gap-3">
+
+                    <!-- Logo  -->
+                    <router-link :to="'/home'" class="text-decoration-none text-white pe-4">
+                        <img src="" alt="Logo" width="80" height="auto">
+                    </router-link>
+
+                    <!-- Link home & about  -->
+                    <router-link :to="'/home'" class="text-decoration-none text-white">
+                        Home
+                    </router-link>
+
+                    <router-link :to="'/home'" class="text-decoration-none text-white">
+                        About
+                    </router-link>
 
                 </div>
-                
+
                 <!-- Links sulla destra -->
-                <div class="navbar-nav m-md-auto ">
-                <a class="nav-link" href="#">Login</a>
-                <a class="nav-link" href="#">Registration</a>
+                <div>
+                    <button class="btn btn-sm btn-outline-light">
+                        <span class="pe-3">Scarica CV</span>
+                        <i class="fa-sharp fa-solid fa-file-arrow-down"></i>
+                    </button>
                 </div>
             </div>
        
@@ -43,13 +49,6 @@ export default {
 </template>
 
 <style lang="scss">
-nav {
-    .container {
-        border-bottom: 1px solid white;
-    }
-}
-
-
 
 
 </style>
