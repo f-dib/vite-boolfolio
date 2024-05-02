@@ -21,11 +21,11 @@ export default {
 
 <template>
 
-  <section class="bg-gradient">
+  <section class="bg-gradient position-relative">
     
-    <AppHeader></AppHeader>
+    <AppHeader class="my_nav"></AppHeader>
   
-    <div class="container py-5">
+    <div class="container">
   
       <router-view></router-view>
   
@@ -44,6 +44,14 @@ export default {
 
   background-image: linear-gradient(to right top, #02080d, #00203d, #13306d, #583593, #a51fa7)!important;
                 
+
+  .my_nav{
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+  }
 }
 
 </style>
