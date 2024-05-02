@@ -7,28 +7,32 @@ export default {
 
 <template>
 
-    <jumbo>
+    <section class="jumbo">
         
         <div class="container text-center">
             <div class="row">
-                <div class="col-md-12 vh-100 d-flex flex-column justify-content-center align-content-center">
-                    <h1 class="center-content">Hi! I'm <span>Geppetto</span></h1>
-                    <p class="center-content">Welcome to my personal portfolio! I'm a professional web developer.</p>
+                <div class="col-md-12 my_jumbo_height d-flex flex-column justify-content-center align-content-center">
+                    <h1>Hi! I'm <span>Geppetto</span></h1>
+                    <p>Welcome to my personal portfolio! I'm a professional web developer.</p>
                     <div>
-                        <button class="btn btn-sm btn-outline-light">Useless Button</button>
+                        <a href="http://localhost:5174/projects"><button class="btn btn-sm btn-outline-light text-uppercase">show more</button></a>
                     </div>
                 </div>
             </div>
         </div>
         
-    </jumbo>
+    </section>
 
 </template>
 
 <style lang="scss">
 
-    jumbo {
+    .jumbo{
         color: white;
+
+        .my_jumbo_height{
+            height: 85vh;
+        }
         
         span {
             color: #00203d;

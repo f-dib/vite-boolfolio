@@ -8,11 +8,9 @@ export default {
 <template>
 
     <footer>
-        <div class="container py-5">
+        <div class="container my_footer_height d-flex align-items-center justify-content-between">
 
             <!-- Per ora come info mail e tel  -->
-
-            <div class="d-flex justify-content-between align-items-center">
 
                 <div class="contacts-footer d-flex flex-column">
                     <div>CONTACTS</div>
@@ -32,14 +30,17 @@ export default {
                     <i class="fa-brands fa-behance"></i>
                 </div>
 
-            </div>
-
         </div>
+
         
     </footer>
 
 </template>
 
 <style lang="scss">
+
+.my_footer_height{
+    height: 15vh;
+}
 
 </style>
