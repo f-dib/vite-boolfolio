@@ -6,22 +6,15 @@ import axios from 'axios';
 
 import AppJumbo from '../components/AppJumbo.vue';
 
-
-
 export default {
 
     name: 'HomePage',
-
-
 
     data() {
 
         return {
 
-
-
         projects: [],
-
 
 
         // link ai vari endpoint dell'api per vedere le varie pagine dei post
@@ -31,9 +24,7 @@ export default {
         apiPageNumber: 1,
 
 
-
         isLoading: true,
-
 
 
         baseApiUrl: 'http://127.0.0.1:8000/api',
@@ -207,16 +198,8 @@ export default {
 
     <main>
         
-        <!-- Prima sezione -->
-        <div class="container pt-5 text-center ">
-          <div class="row">
-          <div class="col-md-12">
-              <h1 class="center-content">Titolo Principale</h1>
-              <p class="center-content">Testo del paragrafo</p>
-              <button class="btn btn-sm btn-outline-light">Button</button>
-          </div>
-          </div>
-      </div>
+      
+        
 
       <!-- Seconda sezione -->
       <div class="container mt-5 pt-5 text-center">
