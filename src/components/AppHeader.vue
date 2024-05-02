@@ -14,11 +14,11 @@ export default {
             <div class="container d-flex justify-content-between align-items-center py-3">
 
                 <!-- Links sulla sinistra -->
-                <div class="d-flex gap-3">
+                <div class="d-flex align-items-center gap-3">
 
                     <!-- Logo  -->
                     <router-link :to="'/home'" class="text-decoration-none text-white pe-4">
-                        <img src="" alt="Logo" width="80" height="auto">
+                        <img src="https://clipart-library.com/image_gallery2/Nike-Logo-PNG.png" alt="Logo" width="80" height="auto">
                     </router-link>
 
                     <!-- Link home & about  -->
@@ -35,8 +35,8 @@ export default {
                 <!-- Links sulla destra -->
                 <div>
                     <button class="btn btn-sm btn-outline-light">
-                        <span class="pe-3">Scarica CV</span>
-                        <i class="fa-sharp fa-solid fa-file-arrow-down"></i>
+                        <i class="fa-sharp fa-solid fa-file-arrow-down pe-3"></i>
+                        <span>Scarica CV</span>
                     </button>
                 </div>
             </div>
