@@ -17,16 +17,16 @@ export default {
                 <div class="d-flex align-items-center gap-3">
 
                     <!-- Logo  -->
-                    <router-link :to="'/home'" class="text-decoration-none text-white pe-4">
+                    <router-link :to="'/'" class="text-decoration-none text-white pe-4">
                         <img src="https://clipart-library.com/image_gallery2/Nike-Logo-PNG.png" alt="Logo" width="80" height="auto">
                     </router-link>
 
                     <!-- Link home & about  -->
-                    <router-link :to="'/home'" class="text-decoration-none text-white">
+                    <router-link :to="'/'" class="text-decoration-none text-white">
                         Home
                     </router-link>
 
-                    <router-link :to="'/home'" class="text-decoration-none text-white">
+                    <router-link :to="'/'" class="text-decoration-none text-white">
                         About
                     </router-link>
 
