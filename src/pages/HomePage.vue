@@ -159,9 +159,8 @@ export default {
     <div v-if="!isLoading">
 
       <div class="row">
-        <div class="d-flex gap-3 m-auto justify-content-around">
-          <div v-for="project in projects"  class="mt-3">      
-            <div class="col">
+          <div v-for="project in projects"  class="col-4 mt-3">      
+            <div class="p-2">
                 <div class="card">
                   <!-- controlla immagine -->
                   <img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid" alt="...">
@@ -175,7 +174,6 @@ export default {
                 </div>
             </div>
           </div>
-        </div>
       </div>
 
 
