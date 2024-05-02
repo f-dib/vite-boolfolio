@@ -1,5 +1,8 @@
 <script>
 import axios from 'axios';
+
+import ProjectCard from '../components/ProjectCard.vue';
+
 export default {
     name: 'SingleProject',
     data() {
@@ -9,6 +12,11 @@ export default {
             apiBaseUrl: 'http://127.0.0.1:8000/api',
         }
     },
+
+    components: {
+        ProjectCard,
+    },
+
     mounted() {
         // come recuperiamo il parametro dell'id del project dall'url?
         console.log('parametro id della rotta: ', this.$route.params.slug);
@@ -37,9 +45,7 @@ export default {
 <template>
 
     <div v-if="project">
-        <h2>
-            {{ project.name }}
-        </h2>
+        <ProjectCard :project="project"></ProjectCard>
     </div>
     <div v-else>
         <div class="spinner-border" role="status">
