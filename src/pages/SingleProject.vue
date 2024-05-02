@@ -11,17 +11,17 @@ export default {
     },
     mounted() {
         // come recuperiamo il parametro dell'id del project dall'url?
-        // console.log('parametro id della rotta: ', this.$route.params.id);
+        console.log('parametro id della rotta: ', this.$route.params.slug);
         
         // lo assegnamo alla variabile projectId per comodità
-        this.projectSlug = this.$route.params.Slug;
+        this.projectSlug = this.$route.params.slug;
         
         axios.get(this.apiBaseUrl + '/projects/' + this.projectSlug).then(res => {
 
             if(res.data.success) {
                 
                 // se troviamo il progetto lo salviamo
-                this.projectSlug = res.data.project
+                this.project = res.data.project
 
             } else {
                 // altrimenti torniamo alla home
