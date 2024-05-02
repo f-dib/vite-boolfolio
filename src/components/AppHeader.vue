@@ -8,9 +8,29 @@ export default {
 <template>
 
     <header>
-        <nav>
-            <div class="container py-2 mb-5">
-                Boolpress
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent ">
+            <div class="container-fluid">
+                <!-- Logo  -->
+                <a class="navbar-brand m-lg-auto " href="#">
+                <img src="" alt="Logo" width="80" height="auto">
+                </a>
+                
+                
+                <!-- Links sulla sinistra -->
+                <div class="navbar-nav mr-auto">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="#">Link3</a>
+                <a class="nav-link" href="#">Link4</a>
+                <a class="nav-link" href="#">Link5</a>
+
+                </div>
+                
+                <!-- Links sulla destra -->
+                <div class="navbar-nav m-md-auto ">
+                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="#">Registration</a>
+                </div>
             </div>
         </nav>
     </header>
