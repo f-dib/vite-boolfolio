@@ -1,7 +1,6 @@
 <script>
 
 // importiamo axios
-
 import axios from 'axios';
 import AppJumbo from '../components/AppJumbo.vue';
 
@@ -13,56 +12,37 @@ export default {
 
         return {
 
-        projects: [],
+            projects: [],
+            // link ai vari endpoint dell'api per vedere le varie pagine dei post
+            apiLinks: [],
+            apiPageNumber: 1,
 
+            isLoading: true,
 
-        // link ai vari endpoint dell'api per vedere le varie pagine dei post
-
-        apiLinks: [],
-
-        apiPageNumber: 1,
-
-
-        isLoading: true,
-
-
-        baseApiUrl: 'http://127.0.0.1:8000/api',
-
-
+            baseApiUrl: 'http://127.0.0.1:8000/api',
 
         }
 
     },
 
     components: {
-    AppJumbo,
-  },
 
-
-
-    mounted() {
-
-        
-
-        this.apiCall();
-
-
+        AppJumbo,
 
     },
 
+    mounted() {
 
+        this.apiCall();
+
+    },
 
     methods: {
-
-
 
         apiCall() {
 
         // impostiamo la variabile isLoading a true
-
         this.isLoading = true
-
-
 
         axios.get(this.baseApiUrl + '/projects', {
 
@@ -74,68 +54,44 @@ export default {
 
         }).then(res => {
 
-
-
             // solo quando riceviamo una risposta di successo
-
             if(res.data.success) {
 
-            // impostiamo isLoading a false
-
-            this.isLoading = false
+              // impostiamo isLoading a false
+              this.isLoading = false
 
             }
 
-
-
-            console.log(res);
-
-
-
             // salvo i post
-
             this.projects = res.data.results.data;
 
-
+            // salvo il totale dei progetti
+            this.totalProject = res.data.results.total;
+            this.itemPage = res.data.results.per_page;
+            this.lastPage = res.data.results.last_page
 
             // salvo i link
-
             this.apiLinks = res.data.results.links;
-
-
 
         })
 
         },
 
-
-
         changeApiPage(pageNumber) {
 
-        // console.log(projectNumber)
+            // console.log(projectNumber)
+            this.apiPageNumber = pageNumber;
 
-        this.apiPageNumber = pageNumber;
-
-
-
-        // rifaccio la chiamata api così riottengo i post relativi alla nuova pagina selezionata
-
-        this.apiCall();
+            // rifaccio la chiamata api così riottengo i post relativi alla nuova pagina selezionata
+            this.apiCall();
 
         },
-
-
 
     },
 
 }
 
-
-
 </script>
-
-
-
 
 <template>
 
@@ -176,21 +132,17 @@ export default {
           </div>
       </div>
 
+      <nav class="button-nav d-flex justify-content-center">
 
-
-      <nav >
-
-        <ul class="d-flex gap-2">
-
-
-          <li v-for="link in apiLinks" v-html="link.label" @click="changeApiPage(link.label)" :class="link.label == apiPageNumber ? 'active' : ''">
-
-
-          </li>
-
-
-        </ul>      
-
+          <vue-awesome-paginate
+          :total-items="totalProject"
+          :items-per-page="itemPage"
+          :max-pages-shown="lastPage"
+          v-model="apiPageNumber" 
+          :on-click="changeApiPage"
+          active-page-class="active-page"
+          paginate-buttons-class="paginate-buttons"/>
+    
       </nav>
 
     </div>
@@ -198,9 +150,7 @@ export default {
     <div v-else>
 
       <div class="spinner-border" role="status">
-
         <span class="visually-hidden">Loading...</span>
-
       </div>
 
     </div>
@@ -209,79 +159,48 @@ export default {
 
 </template>
 
+<style lang="scss">
 
+.button-nav {
 
+    margin-top: 100px;
+    padding-top: 20px;
+    border-top: solid 1px gray;
 
-<style lang="scss" scoped>
-
-
-
-nav {
-
-  margin-top: 100px;
-
-  padding-top: 20px;
-
-  border-top: solid 1px gray;
-
-
-
-  ul {
-
-
-
-    list-style-type: none;
-
-    
-
-    li {
-
-
-      padding: 8px;
-
-      text-decoration: none;
-
-      color: white;
-
-      transition: all .3s ease;
-
-
+    .pagination-container {
+    display: flex;
+    column-gap: 10px;
+    }
+    .paginate-buttons {
+      height: 40px;
+      width: 40px;
+      border-radius: 20px;
       cursor: pointer;
-
-
-      &:hover, &.active {
-
-        background-color: rgba(255,255,255,0.4);
-
-        color: black;
-
-      }
-
-
-
+      background-color: rgba($color: #d6d6d6d6, $alpha: 0.3);
+      border: 1px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
+    .paginate-buttons:hover {
+      background-color: #d8d8d8;
+    }
+    .active-page {
+      background-color: #3498db;
+      border: 1px solid #3498db;
+      color: white;
+    }
+    .active-page:hover {
+      background-color: #2988c8;
     }
 
-  }
-
 }
-
 
 .card{
-  
-transition: transform 0.4s ease, box-shadow 0.3s ease;
-cursor: pointer;
 
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(238, 236, 236, 0.123);
+    }
 
-
-&:hover{
-    transform: scale(1.05);
-    background-color: rgba(238, 236, 236, 0.123);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
-}
-a{
-  border-radius: 14px;
-
-}
 }
 
 
