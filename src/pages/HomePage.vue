@@ -142,6 +142,9 @@ export default {
   <div class="">
 
     <AppJumbo></AppJumbo>
+<br>
+<br>
+<hr>
 
     <!-- Seconda sezione -->
     <div class="container mt-5 pt-5 text-center">
@@ -160,12 +163,13 @@ export default {
           <div v-for="project in projects"  class="mt-3">      
             <div class="col">
                 <div class="card">
-                  <img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top" alt="...">
+                  <!-- controlla immagine -->
+                  <img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid" alt="...">
                   <div class="card-body">
                       <h5 class="card-title">{{ project.name }}</h5>
                       <p class="card-text">Contenuto della card 1.</p>
                   </div>
-                  <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="btn btn-outline-info btn-outline">
+                  <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="btn  ">
                   Mostra
                   </router-link>
                 </div>
@@ -181,13 +185,10 @@ export default {
         <ul class="d-flex gap-2">
 
 
-
           <li v-for="link in apiLinks" v-html="link.label" @click="changeApiPage(link.label)" :class="link.label == apiPageNumber ? 'active' : ''">
 
 
-
           </li>
-
 
 
         </ul>      
@@ -237,24 +238,17 @@ nav {
 
     li {
 
-      
 
       padding: 8px;
-
-
 
       text-decoration: none;
 
       color: white;
 
-
-
       transition: all .3s ease;
 
 
-
       cursor: pointer;
-
 
 
       &:hover, &.active {
@@ -275,12 +269,19 @@ nav {
 
 
 .card{
-
+  
+transition: transform 0.4s ease, box-shadow 0.3s ease;
 cursor: pointer;
-&:hover{
-    background-color: rgba(238, 236, 236, 0.123);
-}
 
+&:hover{
+    transform: scale(1.05);
+    background-color: rgba(238, 236, 236, 0.123);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+a{
+  border-radius: 14px;
+
+}
 }
 
 
