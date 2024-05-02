@@ -3,7 +3,6 @@
 // importiamo axios
 
 import axios from 'axios';
-
 import AppJumbo from '../components/AppJumbo.vue';
 
 export default {
@@ -144,17 +143,15 @@ export default {
 
     <AppJumbo></AppJumbo>
 
-    <h1>I nostri progetti</h1>
-
-        <!-- Seconda sezione -->
-        <div class="container mt-5 pt-5 text-center">
-          <div class="row">
-            <div class="col-md-12">
-                <h2 class="center-content">Titolo Secondario</h2>
-                <p class="center-content">Testo del paragrafo</p>
-            </div>
-          </div>
+    <!-- Seconda sezione -->
+    <div class="container mt-5 pt-5 text-center">
+      <div class="row">
+        <div class="col-md-12">
+            <h2 class="center-content">Titolo Secondario</h2>
+            <p class="center-content">Testo del paragrafo</p>
         </div>
+      </div>
+    </div>
 
     <div v-if="!isLoading">
 
@@ -208,15 +205,6 @@ export default {
       </div>
 
     </div>
-
-
-    <main>
-        
-      
-        
-
-
-  </main>
 
   </div>
 
