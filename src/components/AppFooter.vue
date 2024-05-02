@@ -8,11 +8,19 @@ export default {
 <template>
 
     <footer>
-        <nav>
-            <div class="container py-2 mb-5">
-                footer
+        <div class="container py-5 bg-red">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div class="contacts-footer">
+                    <h3>CONTACTS:</h3>
+                    
+                </div>
+
             </div>
-        </nav>
+
+        </div>
+        
     </footer>
 
 </template>
