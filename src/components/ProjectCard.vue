@@ -17,6 +17,8 @@ export default {
 
     <div class="card">
 
+      <img :src="'http://localhost:8000/storage/' + project.src" alt="foto">
+
       {{ project.name }}
 
     </div>
