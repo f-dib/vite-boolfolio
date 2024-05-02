@@ -2,7 +2,8 @@
 
 // // importiamo axios
 // import axios from 'axios';
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 
 export default {
@@ -11,7 +12,8 @@ export default {
     }
   },
   components: {
-    AppHeader
+    AppHeader,
+    AppFooter,
   },
 };
 
@@ -26,6 +28,8 @@ export default {
     <router-view></router-view>
 
   </div>
+
+  <AppFooter></AppFooter>
   
 </template>
 
