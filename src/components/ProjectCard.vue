@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="container py-5">
     <div class="card">
-      <img :src="'http://localhost:8000/storage/' + project.src" alt="foto">
+      <img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top rounded-top-4" alt="foto">
       <div class="card-body">
         <h5 class="card-title">{{ project.name }}</h5>
         <p class="card-text">{{ project.description }}</p>
@@ -30,7 +30,7 @@ export default {
 
   @use '../style/mixin.scss' as *;
   @use '../style/variables.scss' as *; 
-  
+
   .container {
     padding: 0 2rem;
   }

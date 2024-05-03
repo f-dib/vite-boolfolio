@@ -108,7 +108,11 @@ export default {
                 <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="text-decoration-none">
                   <div class="card">
                     <!-- controlla immagine -->
-                    <div class="p-4"><img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid rounded-4 my_img_size" alt="..."></div>
+                    <div class="p-4">
+                      <div class="overflow-hidden rounded-4">
+                        <img :src="'http://localhost:8000/storage/' + project.src" class="img-fluid rounded-4 my_img_size" alt="...">
+                      </div>
+                    </div>
                     <div class="card-body text-center ">
                         <h5 class="card-title">{{ project.name }}</h5>
                         <p class="card-text">Contenuto della card 1.</p>
@@ -194,6 +198,10 @@ export default {
 
       .my_img_size{
         aspect-ratio: 2/1.3;
+
+        &:hover{
+          transform: scale(1.1);
+        }
       };
 
       &:hover{
