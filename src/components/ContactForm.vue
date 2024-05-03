@@ -33,7 +33,7 @@ methods: {
 
 <template>
 
-    <form @submit.prevent="sendContactRequest()">
+    <form @submit.prevent="sendContactRequest()" class="d-flex flex-column justify-content-center align-content-center">
     
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
@@ -52,7 +52,9 @@ methods: {
         </div>
     
     
-        <button type="submit" class="btn btn-primary">Invia</button>
+        <div>
+            <button type="submit" class="btn btn-primary">Invia</button>
+        </div>
     
     </form>
     
@@ -60,7 +62,7 @@ methods: {
 
     <style lang = "scss">
         form{
-            padding-top: 180px;
             height: 85vh;
+            transform: translateY(8%);
         }
     </style>
