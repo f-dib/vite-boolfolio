@@ -26,8 +26,8 @@ export default {
                         Home
                     </router-link>
 
-                    <router-link :to="'/'" class="text-decoration-none text-white">
-                        About
+                    <router-link :to="'/contact'" class="text-decoration-none text-white">
+                        Contact me
                     </router-link>
 
                 </div>
@@ -52,5 +52,9 @@ export default {
 
     @use '../style/mixin.scss' as *;
     @use '../style/variables.scss' as *;
+
+    header{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 
 </style>

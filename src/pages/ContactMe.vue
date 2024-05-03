@@ -10,14 +10,24 @@ export default {
 
 <template>
 
-<div class="container">
-    <h1>Contattami</h1>
+<div class=" container">
+    <div class="topContainer">
 
-    <ContactForm></ContactForm>
+        
+        <ContactForm></ContactForm>
+    </div>
+
+    
 </div>
 
 </template>
 
 
 <style lang="scss">
+.topContainer{
+    
+    padding-top: 100px;
+
+}
+
 </style>

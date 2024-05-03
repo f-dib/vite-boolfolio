@@ -15,7 +15,7 @@ export default {
                 <div class="contacts-footer d-flex flex-column">
                     <div>CONTACTS</div>
                     <div>
-                        <a class="text-decoration-none" href="mailto:mario@gmail.com">mario@gmail.com</a>
+                        <a class="text-decoration-none" href="mailto:progetto@gmail.com">progetto@gmail.com</a>
                     </div>
                     <div>
                         <a class="text-decoration-none" href="tel:+39166123456">166-123456</a>

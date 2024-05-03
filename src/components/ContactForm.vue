@@ -59,5 +59,5 @@ methods: {
     </template>
 
     <style lang = "scss">
-
+    
     </style>
