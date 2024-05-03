@@ -15,7 +15,9 @@ export default {
                     <h1>Hi! I'm <span>Geppetto</span></h1>
                     <p>Welcome to my personal portfolio! I'm a professional web developer.</p>
                     <div>
-                        <a href="http://localhost:5174/projects"><button class="my_btn text-uppercase fw-bold">show more</button></a>
+                        <router-link :to="'/projects'">
+                            <button class="my_btn text-uppercase fw-bold">show more</button>
+                        </router-link>                        
                     </div>
                 </div>
             </div>

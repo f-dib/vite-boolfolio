@@ -44,7 +44,7 @@ export default {
 
 <template>
 
-    <div v-if="project">
+    <div v-if="project" class="pt-5">
         <ProjectCard :project="project"></ProjectCard>
     </div>
     <div v-else>

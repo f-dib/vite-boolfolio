@@ -94,8 +94,8 @@ export default {
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12 my_mini_jumbo d-flex flex-column align-content-center justify-content-center">
-            <h2 class="center-content">Titolo Secondario</h2>
-            <p class="center-content">Testo del paragrafo</p>
+            <h1 class="center-content fs-1">I Nostri Progetti</h1>
+            <p class="center-content">Le più innovative Tecnologie</p>
         </div>
       </div>
     </div>
@@ -105,17 +105,16 @@ export default {
       <div class="row">
           <div v-for="project in projects"  class="col-4 mt-3">      
             <div class="p-2">
-                <div class="card">
-                  <!-- controlla immagine -->
-                  <div class="p-4 "><img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid rounded-4 " alt="..."></div>
-                  <div class="card-body text-center ">
-                      <h5 class="card-title">{{ project.name }}</h5>
-                      <p class="card-text">Contenuto della card 1.</p>
+                <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="text-decoration-none">
+                  <div class="card">
+                    <!-- controlla immagine -->
+                    <div class="p-4"><img :src="'http://localhost:8000/storage/' + project.src" class="card-img-top img-fluid rounded-4 my_img_size" alt="..."></div>
+                    <div class="card-body text-center ">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">Contenuto della card 1.</p>
+                    </div>
                   </div>
-                  <router-link :to="{name: 'single-project', params: {slug: project.slug}}" class="btn  ">
-                    Mostra
-                  </router-link>
-                </div>
+                </router-link>
             </div>
           </div>
       </div>
@@ -151,7 +150,7 @@ export default {
 
   @use '../style/mixin.scss' as *;
   @use '../style/variables.scss' as *;
-  
+
   .my_mini_jumbo{
     height: 60vh;
   }
@@ -192,6 +191,11 @@ export default {
   .card{
 
       cursor: pointer;
+
+      .my_img_size{
+        aspect-ratio: 2/1.3;
+      };
+
       &:hover{
           background-color: rgba(238, 236, 236, 0.123);
       }
