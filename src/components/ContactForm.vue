@@ -59,5 +59,8 @@ methods: {
     </template>
 
     <style lang = "scss">
-    
+        form{
+            padding-top: 180px;
+            height: 85vh;
+        }
     </style>

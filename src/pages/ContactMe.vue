@@ -24,10 +24,6 @@ export default {
 
 
 <style lang="scss">
-.topContainer{
-    
-    padding-top: 100px;
 
-}
 
 </style>
