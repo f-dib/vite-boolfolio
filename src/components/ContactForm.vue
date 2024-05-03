@@ -15,9 +15,9 @@ data(){
              message: '',
         }
     }
-}
-
 },
+
+
 
 methods: {
         sendContactRequest() {
@@ -25,8 +25,9 @@ methods: {
                 console.log('Risposta API:', res)
             });
         }
+        }
     }
-
+    
 </script>
 
 
