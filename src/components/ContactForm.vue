@@ -3,30 +3,35 @@ import axios from 'axios'
 
 export default{
 
-name: 'ContactForm',
+    name: 'ContactForm',
 
-data(){
+    data(){
 
-    return{
+        return{
 
-        formData:{
-            name: '',
-            address: '',
-             message: '',
+            formData:{
+                name: '',
+                address: '',
+                message: '',
+            }
         }
+    },
+
+    methods: {
+            sendContactRequest() {
+                axios.post('http://127.0.0.1:8000/api/new-contact', this.formData).then(res => {
+
+                    if (res.data.success) {
+                        window.location.href = '/';
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Error sending contact request:', error);               
+                });
+            }   
     }
-},
-
-
-
-methods: {
-        sendContactRequest() {
-            axios.post('http://127.0.0.1:8000/api/new-contact', this.formData).then(res => {
-                console.log('Risposta API:', res)
-            });
-        }
-        }
-    }
+}
     
 </script>
 
@@ -49,20 +54,19 @@ methods: {
         <div class="form-floating mb-3">
             <textarea class="form-control" placeholder="Inserisci il tuo messaggio" id="message" name="message" style="height: 200px" v-model="formData.message"></textarea>
             <label for="message">Messaggio</label>
-        </div>
-    
+        </div>   
     
         <div>
             <button type="submit" class="btn btn-primary">Invia</button>
         </div>
     
     </form>
-    
-    </template>
 
-    <style lang = "scss">
-        form{
-            height: 85vh;
-            transform: translateY(8%);
-        }
-    </style>
+</template>
+
+<style lang = "scss">
+    form{
+        height: 85vh;
+        transform: translateY(8%);
+    }
+</style>
