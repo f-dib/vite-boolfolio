@@ -1,4 +1,9 @@
+@use './style/mixin.scss' as *;
+@use './style/variables.scss' as *;
+
+
 @import "bootstrap/scss/bootstrap";
+
 
 /**************** set Scroll bar style  *************/
 /* width */
@@ -20,4 +25,8 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #a51fa7; 
+}
+
+.my_btn{
+    @include my-button;
 }

@@ -149,51 +149,54 @@ export default {
 
 <style lang="scss">
 
-.my_mini_jumbo{
-  height: 60vh;
-}
+  @use '../style/mixin.scss' as *;
+  @use '../style/variables.scss' as *;
+  
+  .my_mini_jumbo{
+    height: 60vh;
+  }
 
-.button-nav {
+  .button-nav {
 
-    margin-top: 100px;
-    padding-top: 20px;
-    border-top: solid 1px gray;
+      margin-top: 100px;
+      padding-top: 20px;
+      border-top: solid 1px gray;
 
-    .pagination-container {
-    display: flex;
-    column-gap: 10px;
-    }
-    .paginate-buttons {
-      height: 40px;
-      width: 40px;
-      border-radius: 20px;
+      .pagination-container {
+      display: flex;
+      column-gap: 10px;
+      }
+      .paginate-buttons {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: rgba($color: #d6d6d6d6, $alpha: 0.3);
+        border: 1px solid rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
+      }
+      .paginate-buttons:hover {
+        background-color: #d8d8d8;
+      }
+      .active-page {
+        background-color: #3498db;
+        border: 1px solid #3498db;
+        color: white;
+      }
+      .active-page:hover {
+        background-color: #2988c8;
+      }
+
+  }
+
+  .card{
+
       cursor: pointer;
-      background-color: rgba($color: #d6d6d6d6, $alpha: 0.3);
-      border: 1px solid rgb(255, 255, 255);
-      color: rgb(255, 255, 255);
-    }
-    .paginate-buttons:hover {
-      background-color: #d8d8d8;
-    }
-    .active-page {
-      background-color: #3498db;
-      border: 1px solid #3498db;
-      color: white;
-    }
-    .active-page:hover {
-      background-color: #2988c8;
-    }
+      &:hover{
+          background-color: rgba(238, 236, 236, 0.123);
+      }
 
-}
-
-.card{
-
-    cursor: pointer;
-    &:hover{
-        background-color: rgba(238, 236, 236, 0.123);
-    }
-
-}
+  }
 
 
 </style>

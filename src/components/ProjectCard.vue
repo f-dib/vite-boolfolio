@@ -27,21 +27,25 @@ export default {
 </template>
 
 <style lang="scss">
-.container {
-  padding: 0 2rem;
-}
 
-.card {
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-}
+  @use '../style/mixin.scss' as *;
+  @use '../style/variables.scss' as *; 
+  
+  .container {
+    padding: 0 2rem;
+  }
 
-.card-body {
-  padding: 1rem;
-}
+  .card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  }
 
-.card-title {
-  font-weight: bold;
-}
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
 </style>

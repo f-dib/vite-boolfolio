@@ -34,7 +34,7 @@ export default {
 
                 <!-- Links sulla destra -->
                 <div>
-                    <button class="btn btn-sm btn-outline-light">
+                    <button class="my_btn">
                         <i class="fa-sharp fa-solid fa-file-arrow-down pe-3"></i>
                         <span>Scarica CV</span>
                     </button>
@@ -50,5 +50,7 @@ export default {
 
 <style lang="scss">
 
+    @use '../style/mixin.scss' as *;
+    @use '../style/variables.scss' as *;
 
 </style>

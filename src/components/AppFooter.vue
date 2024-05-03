@@ -39,8 +39,11 @@ export default {
 
 <style lang="scss">
 
-.my_footer_height{
-    height: 15vh;
-}
+    @use '../style/mixin.scss' as *;
+    @use '../style/variables.scss' as *;
+
+    .my_footer_height{
+        height: 15vh;
+    }
 
 </style>

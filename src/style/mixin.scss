@@ -1,0 +1,12 @@
+@mixin my-button {
+    color: black;
+    border: 1px solid white;
+    background-color: rgba($color: #dddddd, $alpha: 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: white;
+    }
+}
